@@ -3,7 +3,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error #
 pd.set_option('display.max_columns', None)
+from sklearn.metrics import mean_absolute_error, mean_squared_error
 
+import numpy as np
 try:
     addres = 'venvx/AnnonymData.csv'
 
@@ -133,5 +135,62 @@ print(f"Training target shape (y_train): {y_train.shape}")
 print(f"Testing target shape (y_test): {y_test.shape}")
 
 print("\nData Splitting Complete.")
+
+
+
+
+# Assuming X_train, X_test, y_train, y_test are your DataFrames/Series from Step 4
+
+print("\nStarting Model Training (Linear Regression)...")
+
+# Create a Linear Regression model instance
+model = LinearRegression()
+
+# Train the model using the training data
+# The model learns the coefficients (weights) for each feature
+model.fit(X_train, y_train)
+
+print("Model Training Complete.")
+
+# --- Make Predictions ---
+# Now that the model is trained, let's make predictions on the test data
+print("Making Predictions on Test Data...")
+predictions = model.predict(X_test)
+print("Predictions Complete.")
+
+# You can look at the first few predictions
+print("\nFirst 10 predictions:")
+print(predictions[:10])
+
+# And compare them to the actual values in the test set
+print("\nFirst 10 actual values (y_test):")
+print(y_test.head(10).tolist()) # Convert to list for easier comparison
+
+
+
+
+
+
+# Assuming predictions and y_test are available from Step 5
+
+print("\nStarting Model Evaluation...")
+
+# Calculate Mean Absolute Error (MAE)
+mae = mean_absolute_error(y_test, predictions)
+print(f"Mean Absolute Error (MAE): {mae:.2f}") # .2f formats to 2 decimal places
+
+# Calculate Mean Squared Error (MSE)
+mse = mean_squared_error(y_test, predictions)
+print(f"Mean Squared Error (MSE): {mse:.2f}")
+
+# Calculate Root Mean Squared Error (RMSE)
+rmse = np.sqrt(mse)
+print(f"Root Mean Squared Error (RMSE): {rmse:.2f}")
+
+print("\nModel Evaluation Complete.")
+
+
+
+
 
 
