@@ -194,3 +194,28 @@ print("\nModel Evaluation Complete.")
 
 
 
+print("\nCalculating Custom Success Rate...")
+
+# Define your acceptable tolerance for a prediction to be considered "successful"
+# You can change this value based on what is practical for the school kitchens
+tolerance = 10 # Example: consider a prediction successful if it's within +/- 10 meals
+
+# Apply rounding and non-negativity to the predictions for this practical metric
+rounded_predictions = np.maximum(0, np.round(predictions))
+
+# Calculate the absolute difference between the actual values and the rounded predictions
+absolute_errors = np.abs(y_test - rounded_predictions)
+
+# Count how many predictions are within the defined tolerance
+successful_predictions_count = np.sum(absolute_errors <= tolerance)
+
+# Calculate the success rate (percentage of successful predictions)
+total_predictions_count = len(y_test)
+success_rate = (successful_predictions_count / total_predictions_count) * 100
+
+print(f"Tolerance for Success: +/- {tolerance} meals")
+print(f"Number of Successful Predictions: {successful_predictions_count}")
+print(f"Total Predictions: {total_predictions_count}")
+print(f"Custom Success Rate: {success_rate:.2f}%")
+
+print("\nCustom Success Rate Calculation Complete.")
