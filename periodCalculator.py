@@ -1,8 +1,9 @@
 import pandas as pd
 
 # === CONFIGURATION ===
-file_path = "large_file.csv"      # Your 1GB CSV file
-date_column = "timestamp"         # Replace with your actual column name
+
+file_path = "venvx/annonymdata.csv"
+date_column = "DateOfService"         # Replace with your actual column name
 
 # === GET FIRST ROW ===
 first_row = pd.read_csv(file_path, usecols=[date_column], nrows=1)
