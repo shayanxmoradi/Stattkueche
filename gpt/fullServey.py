@@ -140,8 +140,6 @@ SURVEYS = {
     }
 }
 
-
-
 def setup_model_client(model_type: ModelType):
 
     print(f"Setting up client for model: {model_type.value}")
