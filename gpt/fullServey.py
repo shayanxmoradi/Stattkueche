@@ -146,7 +146,7 @@ def setup_model_client(model_type: ModelType):
 
     if model_type in [ModelType.GPT_4o, ModelType.CLAUDE_3_7_SONNET, ModelType.DEEPSEEK_V2]:
         API_KEYS = {
-            "openai": "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",
+            "openai": "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",
             "anthropic": "YOUR_CLAUDE_KEY_HERE",
             "deepseek": "YOUR_DEEPSEEK_KEY_HERE"
         }
