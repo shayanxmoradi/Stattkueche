@@ -27,7 +27,7 @@ def main():
 
     # --- 1. Load Data ---
 
-    file_path =  'venvx/AnnonymData.csv'
+    file_path = '../venvx/AnnonymData.csv'
     try:
         df_original = pd.read_csv(file_path)
     except FileNotFoundError:

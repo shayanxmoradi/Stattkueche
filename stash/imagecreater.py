@@ -3,9 +3,9 @@ import os
 from collections import defaultdict
 
 # مسیر فایل‌ها
-CSV_PATH = "xHR_expData_followUp_gender.csv"             # مسیر فایل CSV ورودی
+CSV_PATH = "xHR_expData_followUp_gender.csv"  # مسیر فایل CSV ورودی
 IMAGE_FOLDER = "ImageStimuli"     # مسیر فولدر عکس‌ها
-OUTPUT_CSV_PATH = "final_output.csv"    # مسیر فایل خروجی
+OUTPUT_CSV_PATH = "../final_output.csv"  # مسیر فایل خروجی
 
 
 

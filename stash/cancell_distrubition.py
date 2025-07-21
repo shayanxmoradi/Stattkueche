@@ -5,7 +5,7 @@ import seaborn as sns
 
 # Assume your DataFrame 'df' is already loaded and preprocessed
 # For example:
-file_path = 'venvx/AnnonymData.csv'
+file_path = '../venvx/AnnonymData.csv'
 df = pd.read_csv(file_path)
 # # Ensure CanceledQty is numeric (it should be from previous scripts)
 # df['CanceledQty'] = pd.to_numeric(df['CanceledQty'], errors='coerce').fillna(0)

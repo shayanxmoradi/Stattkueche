@@ -2,7 +2,7 @@ import pandas as pd
 
 # === CONFIGURATION ===
 input_file = "venvx/annonymdata.csv"       # Your original 1GB CSV
-output_file = "sample_output.csv"   # Your smaller output file
+output_file = "sample_output.csv"  # Your smaller output file
 num_rows = 20                     # Number of rows to keep
 # selected_columns = ['Column1', 'Column2', 'Column3']  # Edit this!
 
